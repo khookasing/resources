@@ -91,6 +91,27 @@ sent <- read.csv("ni_clean.csv")
 使用 PTT Corpus 的 API 取得 [PTT](https://www.ptt.cc/bbs/hotboards.html) 爬取前20大討論板中以膩為結尾的問句
 
 
+### 歌詞
+
+- Retrieved: 2020-08-03
+- 魔鏡歌詞網歌詞
+- [`/LOPERs/許家誠/lyrics/`](https://drive.google.com/drive/folders/1GJqgQ3Tbws3ZY_T-Md_Zf4r5t0ppA4-f?usp=sharing)
+
+#### 資料格式
+
+子目錄名稱為歌手名稱，收錄該歌手的所有作品。子目錄下每個檔案為`.txt`檔，其名稱為`歌手_歌曲名稱.txt`，內容為該歌曲之歌詞。
+
+#### 資料讀取
+
+```python
+with open("./信樂團/信樂團_一了百了.txt", 'r', encoding="utf-8") as f:
+    lyrics = f.read()
+```
+
+#### 資料來源與處理簡述
+
+由 [※ Mojim.com 魔鏡歌詞網](https://mojim.com) 取得原始網頁內容，用`Beautiful Soup 4`套件析出歌詞內容。
+
 
 已斷詞
 ------------------------------
